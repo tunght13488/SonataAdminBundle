@@ -9,6 +9,8 @@ all:
 
 lint:
 	composer validate
+	find . \( -name '*.xml' -or -name '*.xliff' \) -not -path './vendor/*' -type f -exec xmllint --encode UTF-8 --output '{}' --format '{}' \;
+	git diff --exit-code
 
 test:
 	phpunit -c phpunit.xml.dist --coverage-clover build/logs/clover.xml

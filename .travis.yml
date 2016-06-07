@@ -6,6 +6,7 @@ branches:
   only:
     - master
     - 3.x
+    - xml-lint
 
 language: php
 
@@ -30,6 +31,7 @@ env:
     - SYMFONY_DEPRECATIONS_HELPER=weak
     - TARGET=test
     - UPSTREAM_URL=https://github.com/sonata-project/SonataAdminBundle.git
+    - XMLLINT_INDENT="    "
 
 matrix:
   fast_finish: true
